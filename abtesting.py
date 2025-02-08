@@ -69,3 +69,20 @@ print("Click Probability in Experimental Group:", p_exp_hat)
 # computing the estimate of pooled clicked probability
 p_pooled_hat = (X_con+X_exp)/(N_con + N_exp)
 print("Pooled Click Probability:", p_pooled_hat)
+
+# computing the estimate of pooled variance
+pooled_variance = p_pooled_hat * (1-p_pooled_hat) * (1/N_con + 1/N_exp)
+print("p^_pooled is: ", p_pooled_hat)
+print("pooled_variance is: ", pooled_variance)
+
+# computing the standard error of the test
+SE = np.sqrt(pooled_variance)
+print("Standard Error is: ", SE)
+
+# computing the test statistics of Z-test
+Test_stat = (p_con_hat - p_exp_hat)/SE
+print("Test Statistics for 2-sample Z-test is:", Test_stat)
+
+# critical value of the Z-test
+Z_crit = norm.ppf(1-alpha/2)
+print("Z-critical value from Standard Normal distribution: ", Z_crit)
