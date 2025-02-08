@@ -39,3 +39,33 @@ for p in ax.patches: #ax.patches is each bar in the bar graph
 
 plt.tight_layout()
 plt.show()
+
+alpha = 0.05
+print("Alpha: significance level is:", alpha )
+
+delta = 0.1
+print("Delta: minimum detectable effect is:", delta )
+
+N_con = df_ab_test[df_ab_test["group"] == "con"].count()[0]
+N_exp = df_ab_test[df_ab_test["group"] == "exp"].count()[0]
+
+# calculating the total number of clicks per group by summing 1's
+X_con = df_ab_test.groupby("group")["click"].sum().loc["con"]
+X_exp = df_ab_test.groupby("group")["click"].sum().loc["exp"]
+
+# printing this for visibility
+print(df_ab_test.groupby("group")["click"].sum())
+print("Number of user in Control: ", N_con)
+print("Number of users in Experimental: ", N_exp)
+print("Number of CLicks in Control: ", X_con)
+print("Number of CLicks in Experimental: ", X_exp)
+
+# computing the estimate of click probability per group
+p_con_hat = X_con/N_con
+p_exp_hat = X_exp/N_exp
+print("Click Probability in Control Group:", p_con_hat)
+print("Click Probability in Experimental Group:", p_exp_hat)
+
+# computing the estimate of pooled clicked probability
+p_pooled_hat = (X_con+X_exp)/(N_con + N_exp)
+print("Pooled Click Probability:", p_pooled_hat)
