@@ -104,3 +104,28 @@ def is_statistical_significance(p_value, alpha):
 
 
 is_statistical_significance(p_value, alpha)
+
+# Parameters for the standard normal distribution
+mu = 0  # Mean
+sigma = 1  # Standard deviation
+x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
+y = norm.pdf(x, mu, sigma)
+
+
+# Plotting the standard normal distribution
+plt.plot(x, y, label='Standard Normal Distribution')
+# Shade the rejection region for a two-tailed test
+plt.fill_between(x, y, where=(x > Z_crit) | (x < -Z_crit), color='red', alpha=0.5, label='Rejection Region')
+# Adding Test Statistic
+plt.axvline(Test_stat, color='green', linestyle='dashed', linewidth=2, label=f'Test Statistic = {Test_stat:.2f}')
+# Adding Z-critical values
+plt.axvline(Z_crit, color='blue', linestyle='dashed', linewidth=1, label=f'Z-critical = {Z_crit:.2f}')
+plt.axvline(-Z_crit, color='blue', linestyle='dashed', linewidth=1)
+
+# Adding labels and title
+plt.xlabel('Z-value')
+plt.ylabel('Probability Density')
+plt.title('Gaussian Distribution with Rejection Region \n (A/B Testing for LunarTech CTA button)')
+plt.legend()
+# Show plot
+plt.show()
