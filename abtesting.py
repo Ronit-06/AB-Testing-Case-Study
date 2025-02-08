@@ -86,3 +86,21 @@ print("Test Statistics for 2-sample Z-test is:", Test_stat)
 # critical value of the Z-test
 Z_crit = norm.ppf(1-alpha/2)
 print("Z-critical value from Standard Normal distribution: ", Z_crit)
+
+#calculating p value
+p_value = 2 * norm.sf(abs(Test_stat))
+
+# function checking the statistical significance
+def is_statistical_significance(p_value, alpha):
+
+    # Print the rounded p-value to 3 decimal places
+    print(f"P-value of the 2-sample Z-test: {(p_value)}")
+
+    # Determine statistical significance
+    if p_value <= alpha:
+        print("There is statistical significance, indicating that the observed differences between the groups are unlikely to have occurred by chance alone. This suggests that the changes in the experimental group have a real effect compared to the control group.")
+    else:
+        print("There is no statistical significance, suggesting that the observed differences between the groups could have occurred by chance. This implies that the changes in the experimental group do not have a substantial effect compared to the control group.")
+
+
+is_statistical_significance(p_value, alpha)
