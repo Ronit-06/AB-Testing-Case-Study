@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load the data from the CSV file
-df_ab_test = pd.read_csv("ab_test_click_data (1).csv")
+df_ab_test = pd.read_csv("ab_test_data.csv")
 
 # Display the first few rows of the DataFrame to confirm it's loaded correctly
 print(df_ab_test.head())
