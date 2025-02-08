@@ -1,17 +1,17 @@
-**This is a Case Study that I was using in order to delve in the basics of Data Science.**
+**This is a Case Study that I was using to delve into the basics of Data Science.**
 
 **What I Learned from My First Data Science Case Study?**
 
 Engaging with my first data science case study was an insightful experience that introduced me to various fundamental concepts 
-and methodologies in statistical analysis and hypothesis testing. The study focused on an A/B test for evaluating the impact of 
-a new Call-to-Action (CTA) button on user engagement. Through this process, I gained hands-on experience in working with data, 
+and methodologies in statistical analysis and hypothesis testing. The study focused on an A/B test to evaluate the impact of
+a new call-to-action (CTA) button on user engagement. Through this process, I gained hands-on experience in working with data, 
 applying statistical tests, and interpreting results.
 
 **Key Takeaways:**
 
 Data Exploration and Cleaning:
 
-I learned how to load, explore, and analyze datasets using Pandas. By viewing the first few rows and summarizing the dataset, I ensured that the data was structured correctly for analysis.
+I learned how to load, explore, and analyze datasets using Pandas. By viewing the first few rows and summarizing the dataset, I ensured the data was structured correctly for analysis.
 Grouping and aggregating data provided valuable insights into the distribution of clicks across different groups.
 
 Visualization and Data Representation:
