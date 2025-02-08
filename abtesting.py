@@ -141,3 +141,22 @@ CI = [
 print("Confidence Interval of the 2 sample Z-test is: ", CI)
 
 # Here, the confidence interval provides a range of values within which the true difference between the experimental and control group proportions is likely to lie with a certain level of confidence (e.g., 95%).
+
+def is_Practically_significant(delta, CI_95):
+
+    # Extract lower bound of 95% Confidence Interval
+    lower_bound_CI = CI_95[0]
+
+    # Check if the lower bound of the CI is greater than or equal to delta
+    if delta >= lower_bound_CI:
+        print(f"We have practical significance! \nWith MDE of {delta}, The difference between Control and Experimental group is practically significant.")
+        return True
+    else:
+        print("We don't have practical significance! \nThe difference between Control and Experimental group is not practically significant.")
+        return False
+
+
+
+# Call the function
+significance = is_Practically_significant(delta, CI_95)
+print("Lower bound of 95% confidence interval is: ", CI_95[0])
