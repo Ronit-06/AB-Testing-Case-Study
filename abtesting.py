@@ -129,3 +129,15 @@ plt.title('Gaussian Distribution with Rejection Region \n (A/B Testing for Lunar
 plt.legend()
 # Show plot
 plt.show()
+
+# Calculate the Confidence Interval (CI) for a 2-sample Z-test
+## Calculate the lower and upper bounds of the confidence interval
+CI = [
+    round((p_exp_hat - p_con_hat) - SE*Z_crit, 3),  # Lower bound of the CI, rounded to 3 decimal places
+    round((p_exp_hat - p_con_hat) + SE*Z_crit, 3)   # Upper bound of the CI, rounded to 3 decimal places
+]
+
+# Print the calculated confidence interval
+print("Confidence Interval of the 2 sample Z-test is: ", CI)
+
+# Here, the confidence interval provides a range of values within which the true difference between the experimental and control group proportions is likely to lie with a certain level of confidence (e.g., 95%).
